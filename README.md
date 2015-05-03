@@ -45,7 +45,7 @@ var server = app.listen(3000, function () {
 });
 ```
 
-## Documentation
+## Custom Errors
 
 ```javascript
 
@@ -58,6 +58,8 @@ Parameters:
 * **message**[optional]: Detailed message of this error
 * **errorCode**[optional]: The HTTP Status number to return
 * **internalErrorCode**[optional]: An internal unique code identifier of this error
+
+## Errors
 
 All of the classes below have all parameters set up by default, based on [RFC7231](http://tools.ietf.org/html/rfc7231). 
 But you can override the `message` and the `internalErrorCode` to fit your for personal needs.
