@@ -3,11 +3,16 @@ An HTTP Error collection to use in your next REST API.
 
 Heavily inspired by https://gist.github.com/justmoon/15511f92e5216fa2624b
 
+## Instalation
+```
+npm install throw.js
+```
+
 ## Example
 ```javascript
 var express = require('express');
 var app = express();
-var throwjs = require('throwjs');
+var throwjs = require('throw.js');
 var logger = require('winston');
 
 app.use(function(err, req, res, next) {
