@@ -54,73 +54,90 @@ Parameters:
 * errorCode[optional]: The HTTP Status number to return
 * internalErrorCode[optional]: An internal unique code identifier of this error
 
-All of the above classes have all parameters set up by default. But you can override the `message` and the 
-`internalErrorCode` for personal use.
+All of the classes below have all parameters set up by default, based on [RFC7231](http://tools.ietf.org/html/rfc7231). 
+But you can override the `message` and the `internalErrorCode` to fit your for personal needs.
 
+### 502 Bad Gateway
 ```javascript
 throwjs.badGateway(message, internalErrorCode);
 ```
 
+### 406 Not Acceptable
 ```javascript
 throwjs.notAcceptable(message, internalErrorCode);
 ```
 
+### 404 Not Found
 ```javascript
 throwjs.notFound(message, internalErrorCode);
 ```
 
+### 501 Not Implemented
 ```javascript
 throwjs.notImplemented(message, internalErrorCode);
 ```
 
+### 407 Proxy Authentication Required
 ```javascript
 throwjs.proxyAuthenticationRequired(message, internalErrorCode);
 ```
 
+### 402 Payment Required
 ```javascript
 throwjs.paymentRequired(message, internalErrorCode);
 ```
 
+### 408 Request Timeout
 ```javascript
 throwjs.requestTimeout(message, internalErrorCode);
 ```
 
+### 503 Service Unavailable
 ```javascript
 throwjs.serviceUnavailable(message, internalErrorCode);
 ```
 
+### 401 Unauthorized
 ```javascript
 throwjs.unauthorized(message, internalErrorCode);
 ```
 
+### 400 Bad Request
 ```javascript
 throwjs.badRequest(message, internalErrorCode);
 ```
 
+### 409 Conflict
 ```javascript
 throwjs.conflict(message, internalErrorCode);
 ```
 
+### 403 Forbidden
 ```javascript
 throwjs.forbidden(message, internalErrorCode);
 ```
 
+### 504 Gateway Timeout
 ```javascript
 throwjs.gatewayTimeout(message, internalErrorCode);
 ```
 
+### 410 Gone
 ```javascript
 throwjs.gone(message, internalErrorCode);
 ```
 
+### 505 HTTP Version Not Supported
 ```javascript
 throwjs.httpVersionNotSupported(message, internalErrorCode);
 ```
 
+### 405 Method Not Allowed
 ```javascript
 throwjs.methodNotAllowed(message, internalErrorCode);
 ```
 
+### 500 Internal Server Error
 ```javascript
 throwjs.internalServerError(message, internalErrorCode);
 ```
