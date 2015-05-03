@@ -1,0 +1,27 @@
+{
+  "name": "throw.js",
+  "version": "0.1.0",
+  "description": "A Common REST API error collection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kbariotis/throw.js.git"
+  },
+  "keywords": [
+    "rest",
+    "errors",
+    "api"
+  ],
+  "author": "Kostas Bariotis <konmpar@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kbariotis/throw.js/issues"
+  },
+  "homepage": "https://github.com/kbariotis/throw.js",
+  "devDependencies": {
+    "assert": "^1.3.0"
+  }
+}
