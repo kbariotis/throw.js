@@ -148,3 +148,6 @@ throwjs.methodNotAllowed(message, internalErrorCode);
 ```javascript
 throwjs.internalServerError(message, internalErrorCode);
 ```
+
+## TODO
+* Implement more Error Classes
