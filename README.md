@@ -4,7 +4,7 @@ An HTTP Error collection to use in your next REST API.
 Heavily inspired by https://gist.github.com/justmoon/15511f92e5216fa2624b
 
 ## Example
-```
+```javascript
 var express = require('express');
 var app = express();
 var throwjs = require('throwjs');
@@ -43,7 +43,7 @@ var server = app.listen(3000, function () {
 ## Documentation
 
 
-```
+```javascript
 var throwjs = require('throwjs');
 
 throw new throwjs.customError('customError', 'Something went really bad', 400, 4000);
