@@ -49,10 +49,10 @@ throwjs.customError(slug, message, errorCode, internalErrorCode);
 ```
 
 Parameters:
-* slug[optional]: A unique identifier of this error
-* message[optional]: Detailed message of this error
-* errorCode[optional]: The HTTP Status number to return
-* internalErrorCode[optional]: An internal unique code identifier of this error
+* **slug**[optional]: A unique identifier of this error
+* **message**[optional]: Detailed message of this error
+* **errorCode**[optional]: The HTTP Status number to return
+* **internalErrorCode**[optional]: An internal unique code identifier of this error
 
 All of the classes below have all parameters set up by default, based on [RFC7231](http://tools.ietf.org/html/rfc7231). 
 But you can override the `message` and the `internalErrorCode` to fit your for personal needs.
