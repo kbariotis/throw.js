@@ -31,7 +31,7 @@ app.use(function(err, req, res, next) {
 
 app.get('/', function (req, res, next) {
   
-  throw new throwjs.notFound();
+  next(new throwjs.notFound());
   
 });
 
