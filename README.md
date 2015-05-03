@@ -49,108 +49,78 @@ throwjs.customError(slug, message, errorCode, internalErrorCode);
 ```
 
 Parameters:
-* slug: A unique identifier of this error
-* message: Detailed message of this error
-* errorCode: The HTTP Status number to return
-* internalErrorCode: An internal unique code identifier of this error
+* slug[optional]: A unique identifier of this error
+* message[optional]: Detailed message of this error
+* errorCode[optional]: The HTTP Status number to return
+* internalErrorCode[optional]: An internal unique code identifier of this error
+
+All of the above classes have all parameters set up by default. But you can override the `message` and the 
+`internalErrorCode` for personal use.
 
 ```javascript
-
 throwjs.badGateway(message, internalErrorCode);
-
 ```
-```javascript
 
+```javascript
 throwjs.notAcceptable(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.notFound(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.notImplemented(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.proxyAuthenticationRequired(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.paymentRequired(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.requestTimeout(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.serviceUnavailable(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.unauthorized(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.badRequest(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.conflict(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.forbidden(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.gatewayTimeout(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.gone(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.httpVersionNotSupported(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.methodNotAllowed(message, internalErrorCode);
-
 ```
 
 ```javascript
-
 throwjs.internalServerError(message, internalErrorCode);
-
 ```
