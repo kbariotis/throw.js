@@ -148,6 +148,18 @@ throwjs.methodNotAllowed(message, internalErrorCode);
 ```javascript
 throwjs.internalServerError(message, internalErrorCode);
 ```
+### 422 Unprocessable Entity
+```javascript
+throwjs.unprocessableEntity(message, internalErrorCode);
+```
+### 424 Failed Dependency
+```javascript
+throwjs.failedDependency(message, internalErrorCode);
+```
+### 511 Network Authentication Required
+```javascript
+throwjs.networkAuthenticationRequired(message, internalErrorCode);
+```
 
 ## TODO
 * Implement more Error Classes
