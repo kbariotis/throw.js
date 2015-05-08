@@ -25,7 +25,7 @@ app.use(function(err, req, res, next) {
         delete err.stack;
     }
 
-    res.status(err.errorCode || 500).json(err);
+    res.status(err.statusCode || 500).json(err);
 
 });
 
@@ -49,116 +49,119 @@ var server = app.listen(3000, function () {
 
 ```javascript
 
-throwjs.customError(slug, message, errorCode, internalErrorCode);
+throwjs.customError(slug, message, statusCode, statusCode);
 
 ```
 
 Parameters:
 * **slug**[optional]: A unique identifier of this error
 * **message**[optional]: Detailed message of this error
-* **errorCode**[optional]: The HTTP Status number to return
-* **internalErrorCode**[optional]: An internal unique code identifier of this error
+* **statusCode**[optional]: The HTTP Status number to return
+* **errorCode**[optional]: An internal unique code identifier of this error
 
 ## Errors
 
 All of the classes below have all parameters set up by default, based on [RFC7231](http://tools.ietf.org/html/rfc7231). 
-But you can override the `message` and the `internalErrorCode` to fit your for personal needs.
+But you can override the `message` and the `errorCode` to fit your for personal needs.
 
-### 502 Bad Gateway
+### 400 Bad Request
 ```javascript
-throwjs.badGateway(message, internalErrorCode);
-```
-
-### 406 Not Acceptable
-```javascript
-throwjs.notAcceptable(message, internalErrorCode);
-```
-
-### 404 Not Found
-```javascript
-throwjs.notFound(message, internalErrorCode);
-```
-
-### 501 Not Implemented
-```javascript
-throwjs.notImplemented(message, internalErrorCode);
-```
-
-### 407 Proxy Authentication Required
-```javascript
-throwjs.proxyAuthenticationRequired(message, internalErrorCode);
-```
-
-### 402 Payment Required
-```javascript
-throwjs.paymentRequired(message, internalErrorCode);
-```
-
-### 408 Request Timeout
-```javascript
-throwjs.requestTimeout(message, internalErrorCode);
-```
-
-### 503 Service Unavailable
-```javascript
-throwjs.serviceUnavailable(message, internalErrorCode);
+throwjs.badRequest(message, errorCode);
 ```
 
 ### 401 Unauthorized
 ```javascript
-throwjs.unauthorized(message, internalErrorCode);
+throwjs.unauthorized(message, errorCode);
 ```
 
-### 400 Bad Request
+### 402 Payment Required
 ```javascript
-throwjs.badRequest(message, internalErrorCode);
-```
-
-### 409 Conflict
-```javascript
-throwjs.conflict(message, internalErrorCode);
+throwjs.paymentRequired(message, errorCode);
 ```
 
 ### 403 Forbidden
 ```javascript
-throwjs.forbidden(message, internalErrorCode);
+throwjs.forbidden(message, errorCode);
 ```
 
-### 504 Gateway Timeout
+### 404 Not Found
 ```javascript
-throwjs.gatewayTimeout(message, internalErrorCode);
-```
-
-### 410 Gone
-```javascript
-throwjs.gone(message, internalErrorCode);
-```
-
-### 505 HTTP Version Not Supported
-```javascript
-throwjs.httpVersionNotSupported(message, internalErrorCode);
+throwjs.notFound(message, errorCode);
 ```
 
 ### 405 Method Not Allowed
 ```javascript
-throwjs.methodNotAllowed(message, internalErrorCode);
+throwjs.methodNotAllowed(message, errorCode);
+```
+
+### 406 Not Acceptable
+```javascript
+throwjs.notAcceptable(message, errorCode);
+```
+
+### 407 Proxy Authentication Required
+```javascript
+throwjs.proxyAuthenticationRequired(message, errorCode);
+```
+
+### 408 Request Timeout
+```javascript
+throwjs.requestTimeout(message, errorCode);
+```
+
+### 409 Conflict
+```javascript
+throwjs.conflict(message, errorCode);
+```
+
+### 410 Gone
+```javascript
+throwjs.gone(message, errorCode);
+```
+
+### 422 Unprocessable Entity
+```javascript
+throwjs.unprocessableEntity(message, errorCode);
+```
+
+### 424 Failed Dependency
+```javascript
+throwjs.failedDependency(message, errorCode);
 ```
 
 ### 500 Internal Server Error
 ```javascript
-throwjs.internalServerError(message, internalErrorCode);
+throwjs.internalServerError(message, errorCode);
 ```
-### 422 Unprocessable Entity
+
+### 501 Not Implemented
 ```javascript
-throwjs.unprocessableEntity(message, internalErrorCode);
+throwjs.notImplemented(message, errorCode);
 ```
-### 424 Failed Dependency
+
+### 502 Bad Gateway
 ```javascript
-throwjs.failedDependency(message, internalErrorCode);
+throwjs.badGateway(message, errorCode);
 ```
+
+### 503 Service Unavailable
+```javascript
+throwjs.serviceUnavailable(message, errorCode);
+```
+
+### 504 Gateway Timeout
+```javascript
+throwjs.gatewayTimeout(message, errorCode);
+```
+
+### 505 HTTP Version Not Supported
+```javascript
+throwjs.httpVersionNotSupported(message, errorCode);
+```
+
 ### 511 Network Authentication Required
 ```javascript
-throwjs.networkAuthenticationRequired(message, internalErrorCode);
+throwjs.networkAuthenticationRequired(message, errorCode);
 ```
 
 ## TODO
