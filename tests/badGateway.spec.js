@@ -42,9 +42,9 @@ try {
   assert.strictEqual(err.stack.split('\n')[1].indexOf('doSomethingMoreBad'), 7);
 
   // The response error code should have been set
-  assert.strictEqual(err.errorCode, 502);
+  assert.strictEqual(err.statusCode, 502);
 
   // The customer error code should have been set
-  assert.strictEqual(err.internalErrorCode, 502);
+  assert.strictEqual(err.errorCode, 502);
 }
 

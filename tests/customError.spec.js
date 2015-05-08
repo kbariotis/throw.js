@@ -42,8 +42,8 @@ try {
   assert.strictEqual(err.stack.split('\n')[1].indexOf('doSomethingBad'), 7);
 
   // The response error code should have been set
-  assert.strictEqual(err.errorCode, 400);
+  assert.strictEqual(err.statusCode, 400);
 
   // The customer error code should have been set
-  assert.strictEqual(err.internalErrorCode, 4000);
+  assert.strictEqual(err.errorCode, 4000);
 }
