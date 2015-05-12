@@ -15,6 +15,12 @@ var app = express();
 var throwjs = require('throw.js');
 var logger = require('winston');
 
+app.get('/', function (req, res, next) {
+  
+  next(new throwjs.notFound());
+  
+});
+
 app.use(function(err, req, res, next) {
 
     logger.error(err);
@@ -27,12 +33,6 @@ app.use(function(err, req, res, next) {
 
     res.status(err.statusCode || 500).json(err);
 
-});
-
-app.get('/', function (req, res, next) {
-  
-  next(new throwjs.notFound());
-  
 });
 
 var server = app.listen(3000, function () {
