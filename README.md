@@ -49,7 +49,7 @@ var server = app.listen(3000, function () {
 
 ```javascript
 
-throwjs.customError(slug, message, statusCode, statusCode);
+throwjs.customError(slug, message, statusCode, errorCode);
 
 ```
 
