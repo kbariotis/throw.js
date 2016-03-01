@@ -6,7 +6,7 @@ var assert = require('assert'),
   errors = require('../lib');
 
 function doSomethingBad() {
-  throw new errors.customError('customError', 'It went bad!', 400, 4000);
+  throw new errors.CustomError('customError', 'It went bad!', 400, 4000);
 }
 
 try {
@@ -16,10 +16,10 @@ try {
 } catch (err) {
 
   // The name property should be set to the error's name
-  assert(err.name = 'customError');
+  assert(err.name = 'CustomError');
 
   // The error should be an instance of its class
-  assert(err instanceof errors.customError);
+  assert(err instanceof errors.CustomError);
 
   // The error should be an instance of builtin Error
   assert(err instanceof Error);
@@ -32,11 +32,11 @@ try {
 
   // toString should return the default error message formatting
   assert.strictEqual(err.toString(),
-    'customError: It went bad!');
+    'CustomError: It went bad!');
 
   // The stack should start with the default error message formatting
   assert.strictEqual(err.stack.split('\n')[0],
-    'customError: It went bad!');
+    'CustomError: It went bad!');
 
   // The first stack frame should be the function where the error was thrown.
   assert.strictEqual(err.stack.split('\n')[1].indexOf('doSomethingBad'), 7);

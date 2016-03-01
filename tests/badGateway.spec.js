@@ -6,7 +6,7 @@ var assert = require('assert'),
   errors = require('../lib');
 
 function doSomethingMoreBad() {
-  throw new errors.badGateway();
+  throw new errors.BadGateway();
 }
 
 try {
@@ -16,10 +16,10 @@ try {
 } catch (err) {
 
   // The name property should be set to the error's name
-  assert(err.name = 'badGateway');
+  assert(err.name = 'BadGateway');
 
   // The error should be an instance of its class
-  assert(err instanceof errors.badGateway);
+  assert(err instanceof errors.BadGateway);
 
   // The error should be an instance of builtin Error
   assert(err instanceof Error);
@@ -32,11 +32,11 @@ try {
 
   // toString should return the default error message formatting
   assert.strictEqual(err.toString(),
-    'badGateway: Bad Gateway');
+    'BadGateway: Bad Gateway');
 
   // The stack should start with the default error message formatting
   assert.strictEqual(err.stack.split('\n')[0],
-    'badGateway: Bad Gateway');
+    'BadGateway: Bad Gateway');
 
   // The first stack frame should be the function where the error was thrown.
   assert.strictEqual(err.stack.split('\n')[1].indexOf('doSomethingMoreBad'), 7);
