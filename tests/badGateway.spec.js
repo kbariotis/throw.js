@@ -6,7 +6,7 @@ var assert = require('assert'),
   errors = require('../lib');
 
 function doSomethingMoreBad() {
-  throw new errors.BadGateway();
+  throw new errors.badGateway();
 }
 
 try {
@@ -19,7 +19,7 @@ try {
   assert(err.name = 'BadGateway');
 
   // The error should be an instance of its class
-  assert(err instanceof errors.BadGateway);
+  assert(err instanceof errors.badGateway);
 
   // The error should be an instance of builtin Error
   assert(err instanceof Error);

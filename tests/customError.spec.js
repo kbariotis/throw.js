@@ -6,7 +6,7 @@ var assert = require('assert'),
   errors = require('../lib');
 
 function doSomethingBad() {
-  throw new errors.CustomError('customError', 'It went bad!', 400, 4000);
+  throw new errors.customError('customError', 'It went bad!', 400, 4000);
 }
 
 try {
@@ -19,7 +19,7 @@ try {
   assert(err.name = 'CustomError');
 
   // The error should be an instance of its class
-  assert(err instanceof errors.CustomError);
+  assert(err instanceof errors.customError);
 
   // The error should be an instance of builtin Error
   assert(err instanceof Error);
