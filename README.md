@@ -1,27 +1,24 @@
 # throw.js
 An HTTP Error collection to use in your next REST API.
 
-Heavily inspired by https://gist.github.com/justmoon/15511f92e5216fa2624b
-
 ## Installation
 ```
-npm install throw.js
+npm install --save throw.js
 ```
 
 ## Example
 ```javascript
-var express = require('express');
-var app = express();
-var throwjs = require('throw.js');
-var logger = require('winston');
+const express = require('express');
+const app = express();
+const throwjs = require('throw.js');
+const logger = require('winston');
 
-app.get('/', function (req, res, next) {
+app.get('/', (req, res, next) => {
   
   next(new throwjs.notFound());
-  
 });
 
-app.use(function(err, req, res, next) {
+app.use((err, req, res, next) => {
 
     logger.error(err);
     
@@ -35,14 +32,7 @@ app.use(function(err, req, res, next) {
 
 });
 
-var server = app.listen(3000, function () {
-
-  var host = server.address().address;
-  var port = server.address().port;
-
-  console.log('Example app listening at http://%s:%s', host, port);
-
-});
+app.listen(3000);
 ```
 
 ## Custom Errors
