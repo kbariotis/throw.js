@@ -10,13 +10,12 @@ npm install --save throw.js
 ```javascript
 const express = require('express');
 const app = express();
-const throwjs = require('throw.js');
+const errors = require('throw.js');
 const logger = require('winston');
 
 app.get('/', (req, res, next) => {
   
-  next(new throwjs.notFound());
-  next(new throwjs.NotFound());
+  next(new errors.NotFound());
 });
 
 app.use((err, req, res, next) => {
@@ -39,7 +38,9 @@ app.listen(3000);
 
 ```javascript
 
-throwjs.customError(slug, message, statusCode, errorCode);
+const errors = require('throw.js');
+
+errors.CustomError(slug, message, statusCode, errorCode);
 
 ```
 
@@ -56,102 +57,102 @@ But you can override the `message` and the `errorCode` to fit your for personal 
 
 ### 400 Bad Request
 ```javascript
-throwjs.BadRequest(message, errorCode);
+errors.BadRequest(message, errorCode);
 ```
 
 ### 401 Unauthorized
 ```javascript
-throwjs.Unauthorized(message, errorCode);
+errors.Unauthorized(message, errorCode);
 ```
 
 ### 402 Payment Required
 ```javascript
-throwjs.PaymentRequired(message, errorCode);
+errors.PaymentRequired(message, errorCode);
 ```
 
 ### 403 Forbidden
 ```javascript
-throwjs.Forbidden(message, errorCode);
+errors.Forbidden(message, errorCode);
 ```
 
 ### 404 Not Found
 ```javascript
-throwjs.NotFound(message, errorCode);
+errors.NotFound(message, errorCode);
 ```
 
 ### 405 Method Not Allowed
 ```javascript
-throwjs.MethodNotAllowed(message, errorCode);
+errors.MethodNotAllowed(message, errorCode);
 ```
 
 ### 406 Not Acceptable
 ```javascript
-throwjs.NotAcceptable(message, errorCode);
+errors.NotAcceptable(message, errorCode);
 ```
 
 ### 407 Proxy Authentication Required
 ```javascript
-throwjs.ProxyAuthenticationRequired(message, errorCode);
+errors.ProxyAuthenticationRequired(message, errorCode);
 ```
 
 ### 408 Request Timeout
 ```javascript
-throwjs.RequestTimeout(message, errorCode);
+errors.RequestTimeout(message, errorCode);
 ```
 
 ### 409 Conflict
 ```javascript
-throwjs.Conflict(message, errorCode);
+errors.Conflict(message, errorCode);
 ```
 
 ### 410 Gone
 ```javascript
-throwjs.Gone(message, errorCode);
+errors.Gone(message, errorCode);
 ```
 
 ### 422 Unprocessable Entity
 ```javascript
-throwjs.UnprocessableEntity(message, errorCode);
+errors.UnprocessableEntity(message, errorCode);
 ```
 
 ### 424 Failed Dependency
 ```javascript
-throwjs.FailedDependency(message, errorCode);
+errors.FailedDependency(message, errorCode);
 ```
 
 ### 500 Internal Server Error
 ```javascript
-throwjs.InternalServerError(message, errorCode);
+errors.InternalServerError(message, errorCode);
 ```
 
 ### 501 Not Implemented
 ```javascript
-throwjs.NotImplemented(message, errorCode);
+errors.NotImplemented(message, errorCode);
 ```
 
 ### 502 Bad Gateway
 ```javascript
-throwjs.BadGateway(message, errorCode);
+errors.BadGateway(message, errorCode);
 ```
 
 ### 503 Service Unavailable
 ```javascript
-throwjs.ServiceUnavailable(message, errorCode);
+errors.ServiceUnavailable(message, errorCode);
 ```
 
 ### 504 Gateway Timeout
 ```javascript
-throwjs.GatewayTimeout(message, errorCode);
+errors.GatewayTimeout(message, errorCode);
 ```
 
 ### 505 HTTP Version Not Supported
 ```javascript
-throwjs.HttpVersionNotSupported(message, errorCode);
+errors.HttpVersionNotSupported(message, errorCode);
 ```
 
 ### 511 Network Authentication Required
 ```javascript
-throwjs.NetworkAuthenticationRequired(message, errorCode);
+errors.NetworkAuthenticationRequired(message, errorCode);
 ```
 
 ## TODO

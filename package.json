@@ -1,6 +1,6 @@
 {
   "name": "throw.js",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "A full REST API error collection",
   "main": "lib/index.js",
   "scripts": {
