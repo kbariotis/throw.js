@@ -1,12 +1,12 @@
 /**
- * @test lib/errors/badGateway
+ * @test lib/errors/BadGateway
  */
 
 var assert = require('assert'),
   errors = require('../lib');
 
 function doSomethingMoreBad() {
-  throw new errors.badGateway();
+  throw new errors.BadGateway();
 }
 
 try {
@@ -19,7 +19,7 @@ try {
   assert(err.name = 'BadGateway');
 
   // The error should be an instance of its class
-  assert(err instanceof errors.badGateway);
+  assert(err instanceof errors.BadGateway);
 
   // The error should be an instance of builtin Error
   assert(err instanceof Error);
