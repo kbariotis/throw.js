@@ -16,6 +16,7 @@ const logger = require('winston');
 app.get('/', (req, res, next) => {
   
   next(new throwjs.notFound());
+  next(new throwjs.NotFound());
 });
 
 app.use((err, req, res, next) => {
@@ -29,7 +30,6 @@ app.use((err, req, res, next) => {
     }
 
     res.status(err.statusCode || 500).json(err);
-
 });
 
 app.listen(3000);
@@ -56,102 +56,102 @@ But you can override the `message` and the `errorCode` to fit your for personal 
 
 ### 400 Bad Request
 ```javascript
-throwjs.badRequest(message, errorCode);
+throwjs.BadRequest(message, errorCode);
 ```
 
 ### 401 Unauthorized
 ```javascript
-throwjs.unauthorized(message, errorCode);
+throwjs.Unauthorized(message, errorCode);
 ```
 
 ### 402 Payment Required
 ```javascript
-throwjs.paymentRequired(message, errorCode);
+throwjs.PaymentRequired(message, errorCode);
 ```
 
 ### 403 Forbidden
 ```javascript
-throwjs.forbidden(message, errorCode);
+throwjs.Forbidden(message, errorCode);
 ```
 
 ### 404 Not Found
 ```javascript
-throwjs.notFound(message, errorCode);
+throwjs.NotFound(message, errorCode);
 ```
 
 ### 405 Method Not Allowed
 ```javascript
-throwjs.methodNotAllowed(message, errorCode);
+throwjs.MethodNotAllowed(message, errorCode);
 ```
 
 ### 406 Not Acceptable
 ```javascript
-throwjs.notAcceptable(message, errorCode);
+throwjs.NotAcceptable(message, errorCode);
 ```
 
 ### 407 Proxy Authentication Required
 ```javascript
-throwjs.proxyAuthenticationRequired(message, errorCode);
+throwjs.ProxyAuthenticationRequired(message, errorCode);
 ```
 
 ### 408 Request Timeout
 ```javascript
-throwjs.requestTimeout(message, errorCode);
+throwjs.RequestTimeout(message, errorCode);
 ```
 
 ### 409 Conflict
 ```javascript
-throwjs.conflict(message, errorCode);
+throwjs.Conflict(message, errorCode);
 ```
 
 ### 410 Gone
 ```javascript
-throwjs.gone(message, errorCode);
+throwjs.Gone(message, errorCode);
 ```
 
 ### 422 Unprocessable Entity
 ```javascript
-throwjs.unprocessableEntity(message, errorCode);
+throwjs.UnprocessableEntity(message, errorCode);
 ```
 
 ### 424 Failed Dependency
 ```javascript
-throwjs.failedDependency(message, errorCode);
+throwjs.FailedDependency(message, errorCode);
 ```
 
 ### 500 Internal Server Error
 ```javascript
-throwjs.internalServerError(message, errorCode);
+throwjs.InternalServerError(message, errorCode);
 ```
 
 ### 501 Not Implemented
 ```javascript
-throwjs.notImplemented(message, errorCode);
+throwjs.NotImplemented(message, errorCode);
 ```
 
 ### 502 Bad Gateway
 ```javascript
-throwjs.badGateway(message, errorCode);
+throwjs.BadGateway(message, errorCode);
 ```
 
 ### 503 Service Unavailable
 ```javascript
-throwjs.serviceUnavailable(message, errorCode);
+throwjs.ServiceUnavailable(message, errorCode);
 ```
 
 ### 504 Gateway Timeout
 ```javascript
-throwjs.gatewayTimeout(message, errorCode);
+throwjs.GatewayTimeout(message, errorCode);
 ```
 
 ### 505 HTTP Version Not Supported
 ```javascript
-throwjs.httpVersionNotSupported(message, errorCode);
+throwjs.HttpVersionNotSupported(message, errorCode);
 ```
 
 ### 511 Network Authentication Required
 ```javascript
-throwjs.networkAuthenticationRequired(message, errorCode);
+throwjs.NetworkAuthenticationRequired(message, errorCode);
 ```
 
 ## TODO
