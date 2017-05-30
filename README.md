@@ -7,6 +7,7 @@ npm install --save throw.js
 ```
 
 ## Example
+
 ```javascript
 const express = require('express');
 const app = express();
@@ -14,21 +15,17 @@ const errors = require('throw.js');
 const logger = require('winston');
 
 app.get('/', (req, res, next) => {
-  
   next(new errors.NotFound());
 });
 
 app.use((err, req, res, next) => {
-
-    logger.error(err);
+  logger.error(err);
     
-    if (req.app.get('env') !== 'development' &&
-        req.app.get('env') !== 'test') {
-
-        delete err.stack;
-    }
-
-    res.status(err.statusCode || 500).json(err);
+  if (req.app.get('env') !== 'development' && req.app.get('env') !== 'test') {
+    delete err.stack;
+  }
+  
+  res.status(err.statusCode || 500).json(err);
 });
 
 app.listen(3000);
@@ -37,11 +34,9 @@ app.listen(3000);
 ## Custom Errors
 
 ```javascript
-
 const errors = require('throw.js');
 
 errors.CustomError(slug, message, statusCode, errorCode);
-
 ```
 
 Parameters:
