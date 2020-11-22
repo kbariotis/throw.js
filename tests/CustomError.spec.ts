@@ -2,7 +2,8 @@ import * as assert from "assert";
 import CustomError from "../lib/CustomError";
 
 function doSomethingBad() {
-  throw new CustomError("CustomError", "It went bad!", 400, 400);
+  const originalError = new Error("Original error");
+  throw new CustomError("It went bad!", 400, 4000, originalError);
 }
 
 try {
@@ -16,6 +17,8 @@ try {
 
   // The error should be an instance of builtin Error
   assert(err instanceof Error);
+
+  assert(err.originalError instanceof Error);
 
   // The error should be recognized by Node.js' util#isError
   assert(require("util").isError(err));

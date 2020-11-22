@@ -1,11 +1,13 @@
-export default class ExtendableError extends Error {
+export default class CustomError extends Error {
   errorCode: number;
   statusCode: number;
+  originalError?: Error;
 
   constructor(
     message: string,
     statusCode: number = 400,
-    errorCode: number = 400
+    errorCode: number = 400,
+    originalError?: Error
   ) {
     super(message);
 
@@ -13,6 +15,7 @@ export default class ExtendableError extends Error {
     this.message = message;
     this.statusCode = statusCode;
     this.errorCode = errorCode;
+    this.originalError = originalError;
 
     if (typeof Error.captureStackTrace === "function") {
       Error.captureStackTrace(this, this.constructor);
