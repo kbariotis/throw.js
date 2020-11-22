@@ -44,7 +44,7 @@ app.listen(3000);
 ```javascript
 const Error = require("throw.js/CustomError");
 
-Error(message, statusCode, errorCode);
+throw new Error(message, statusCode?, errorCode?, originalError?);
 ```
 
 Parameters:
@@ -52,6 +52,19 @@ Parameters:
 -   **message**[optional]: Detailed message of this error
 -   **statusCode**[optional]: The HTTP Status number to return
 -   **errorCode**[optional]: An internal unique code identifier of this error
+
+## Stacking Errors
+
+```javascript
+const Error = require("throw.js/CustomError");
+
+try {
+    // throws an error
+} catch (e) {
+    // Pass the error as a parameter to keep its original stack trace
+    throw new Error(message, statusCode, errorCode, e);
+}
+```
 
 ## Errors
 
@@ -61,121 +74,121 @@ But you can override the `message` and the `errorCode` to fit your for personal 
 ### 400 Bad Request
 
 ```javascript
-BadRequest(message, errorCode);
+BadRequest(message?, errorCode?, originalError?);
 ```
 
 ### 401 Unauthorized
 
 ```javascript
-Unauthorized(message, errorCode);
+Unauthorized(message?, errorCode?, originalError?);
 ```
 
 ### 402 Payment Required
 
 ```javascript
-PaymentRequired(message, errorCode);
+PaymentRequired(message?, errorCode?, originalError?);
 ```
 
 ### 403 Forbidden
 
 ```javascript
-Forbidden(message, errorCode);
+Forbidden(message?, errorCode?, originalError?);
 ```
 
 ### 404 Not Found
 
 ```javascript
-NotFound(message, errorCode);
+NotFound(message?, errorCode?, originalError?);
 ```
 
 ### 405 Method Not Allowed
 
 ```javascript
-MethodNotAllowed(message, errorCode);
+MethodNotAllowed(message?, errorCode?, originalError?);
 ```
 
 ### 406 Not Acceptable
 
 ```javascript
-NotAcceptable(message, errorCode);
+NotAcceptable(message?, errorCode?, originalError?);
 ```
 
 ### 407 Proxy Authentication Required
 
 ```javascript
-ProxyAuthenticationRequired(message, errorCode);
+ProxyAuthenticationRequired(message?, errorCode?, originalError?);
 ```
 
 ### 408 Request Timeout
 
 ```javascript
-RequestTimeout(message, errorCode);
+RequestTimeout(message?, errorCode?, originalError?);
 ```
 
 ### 409 Conflict
 
 ```javascript
-Conflict(message, errorCode);
+Conflict(message?, errorCode?, originalError?);
 ```
 
 ### 410 Gone
 
 ```javascript
-Gone(message, errorCode);
+Gone(message?, errorCode?, originalError?);
 ```
 
 ### 422 Unprocessable Entity
 
 ```javascript
-UnprocessableEntity(message, errorCode);
+UnprocessableEntity(message?, errorCode?, originalError?);
 ```
 
 ### 424 Failed Dependency
 
 ```javascript
-FailedDependency(message, errorCode);
+FailedDependency(message?, errorCode?, originalError?);
 ```
 
 ### 500 Internal Server Error
 
 ```javascript
-InternalServerError(message, errorCode);
+InternalServerError(message?, errorCode?, originalError?);
 ```
 
 ### 501 Not Implemented
 
 ```javascript
-NotImplemented(message, errorCode);
+NotImplemented(message?, errorCode?, originalError?);
 ```
 
 ### 502 Bad Gateway
 
 ```javascript
-BadGateway(message, errorCode);
+BadGateway(message?, errorCode?, originalError?);
 ```
 
 ### 503 Service Unavailable
 
 ```javascript
-ServiceUnavailable(message, errorCode);
+ServiceUnavailable(message?, errorCode?, originalError?);
 ```
 
 ### 504 Gateway Timeout
 
 ```javascript
-GatewayTimeout(message, errorCode);
+GatewayTimeout(message?, errorCode?, originalError?);
 ```
 
 ### 505 HTTP Version Not Supported
 
 ```javascript
-HttpVersionNotSupported(message, errorCode);
+HttpVersionNotSupported(message?, errorCode?, originalError?);
 ```
 
 ### 511 Network Authentication Required
 
 ```javascript
-NetworkAuthenticationRequired(message, errorCode);
+NetworkAuthenticationRequired(message?, errorCode?, originalError?);
 ```
 
 ## TODO
