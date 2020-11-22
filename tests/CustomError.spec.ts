@@ -1,50 +1,40 @@
-/**
- * @test lib/errors/BadGateway
- */
+import * as assert from "assert";
+import CustomError from "../lib/CustomError";
 
-var assert = require('assert'),
-  errors = require('../lib');
-
-function doSomethingMoreBad() {
-  throw new errors.BadGateway();
+function doSomethingBad() {
+  throw new CustomError("CustomError", "It went bad!", 400, 400);
 }
 
 try {
-
-  doSomethingMoreBad();
-
+  doSomethingBad();
 } catch (err) {
-
   // The name property should be set to the error's name
-  assert(err.name = 'BadGateway');
+  assert((err.name = "CustomError"));
 
   // The error should be an instance of its class
-  assert(err instanceof errors.BadGateway);
+  assert(err instanceof CustomError);
 
   // The error should be an instance of builtin Error
   assert(err instanceof Error);
 
   // The error should be recognized by Node.js' util#isError
-  assert(require('util').isError(err));
+  assert(require("util").isError(err));
 
   // The error should have recorded a stack
   assert(err.stack);
 
   // toString should return the default error message formatting
-  assert.strictEqual(err.toString(),
-    'BadGateway: Bad Gateway');
+  assert.strictEqual(err.toString(), "CustomError: It went bad!");
 
   // The stack should start with the default error message formatting
-  assert.strictEqual(err.stack.split('\n')[0],
-    'BadGateway: Bad Gateway');
+  assert.strictEqual(err.stack.split("\n")[0], "CustomError: It went bad!");
 
   // The first stack frame should be the function where the error was thrown.
-  assert.strictEqual(err.stack.split('\n')[1].indexOf('doSomethingMoreBad'), 7);
+  assert.strictEqual(err.stack.split("\n")[1].indexOf("doSomethingBad"), 7);
 
   // The response error code should have been set
-  assert.strictEqual(err.statusCode, 502);
+  assert.strictEqual(err.statusCode, 400);
 
   // The customer error code should have been set
-  assert.strictEqual(err.errorCode, 502);
+  assert.strictEqual(err.errorCode, 4000);
 }
-
