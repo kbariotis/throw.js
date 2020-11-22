@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "lib": [],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "declaration": true,
+    "strict": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitThis": true,
+    "rootDir": "./lib",
+    "outDir": "dist"
+  },
+  "include": ["lib/**/*.ts"],
+  "exclude": ["tests"]
+}
