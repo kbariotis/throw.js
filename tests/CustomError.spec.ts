@@ -40,4 +40,8 @@ try {
 
   // The customer error code should have been set
   assert.strictEqual(err.errorCode, 4000);
+  assert.strictEqual(err.toJSON().message, "It went bad!");
+  assert.strictEqual(err.toJSON().statusCode, 400);
+  assert.strictEqual(err.toJSON().errorCode, 4000);
+  assert.strictEqual(err.toJSON().name, "CustomError");
 }
