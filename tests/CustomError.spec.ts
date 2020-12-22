@@ -38,6 +38,12 @@ try {
   // The response error code should have been set
   assert.strictEqual(err.statusCode, 400);
 
-  // The customer error code should have been set
+  // Serializes JSON structure
   assert.strictEqual(err.errorCode, 4000);
+  assert.strictEqual(err.toJSON().message, "It went bad!");
+  assert.strictEqual(err.toJSON().statusCode, 400);
+  assert.strictEqual(err.toJSON().errorCode, 4000);
+  assert.strictEqual(err.toJSON().name, "CustomError");
+  assert.notStrictEqual(err.toJSON().originalError, undefined);
+  assert.notStrictEqual(err.toJSON().stack, undefined);
 }

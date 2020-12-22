@@ -23,4 +23,35 @@ export default class CustomError extends Error {
       this.stack = new Error(message).stack;
     }
   }
+
+  toJSON() {
+    const jsonStructure: {
+      message: string;
+      statusCode: number;
+      errorCode: number;
+      name: string;
+      stack?: string;
+      originalError?: {
+        message: string;
+        name: string;
+        stack?: string;
+      };
+    } = {
+      message: this.message,
+      statusCode: this.statusCode,
+      errorCode: this.errorCode,
+      name: this.name,
+      stack: this.stack,
+    };
+
+    if (this.originalError) {
+      jsonStructure.originalError = {
+        name: this.originalError.name,
+        message: this.originalError.message,
+        stack: this.originalError.stack,
+      };
+    }
+
+    return jsonStructure;
+  }
 }
