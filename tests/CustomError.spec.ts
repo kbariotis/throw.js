@@ -44,4 +44,6 @@ try {
   assert.strictEqual(err.toJSON().statusCode, 400);
   assert.strictEqual(err.toJSON().errorCode, 4000);
   assert.strictEqual(err.toJSON().name, "CustomError");
+  assert.notStrictEqual(err.toJSON().originalError, undefined);
+  assert.notStrictEqual(err.toJSON().stack, undefined);
 }
