@@ -1,6 +1,6 @@
 {
   "name": "throw.js",
-  "version": "3.0.1",
+  "version": "4.1.0",
   "description": "A full REST API error collection",
   "scripts": {
     "build": "tsc",
