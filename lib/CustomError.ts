@@ -1,16 +1,3 @@
-type JSONStruct = {
-  message: string;
-  statusCode: number;
-  errorCode: number;
-  name: string;
-  stack?: string;
-  originalError?: {
-    message: string;
-    name: string;
-    stack?: string;
-  };
-};
-
 export default class CustomError extends Error {
   errorCode: number;
   statusCode: number;
@@ -38,7 +25,18 @@ export default class CustomError extends Error {
   }
 
   toJSON() {
-    const jsonStructure: JSONStruct = {
+    const jsonStructure: {
+      message: string;
+      statusCode: number;
+      errorCode: number;
+      name: string;
+      stack?: string;
+      originalError?: {
+        message: string;
+        name: string;
+        stack?: string;
+      };
+    } = {
       message: this.message,
       statusCode: this.statusCode,
       errorCode: this.errorCode,
@@ -47,15 +45,11 @@ export default class CustomError extends Error {
     };
 
     if (this.originalError) {
-      if ("toJSON" in this.originalError) {
-        jsonStructure.originalError = (this.originalError as any).toJSON();
-      } else {
-        jsonStructure.originalError = {
-          name: this.originalError.name,
-          message: this.originalError.message,
-          stack: this.originalError.stack,
-        };
-      }
+      jsonStructure.originalError = {
+        name: this.originalError.name,
+        message: this.originalError.message,
+        stack: this.originalError.stack,
+      };
     }
 
     return jsonStructure;
