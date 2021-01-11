@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class NetworkAuthenticationRequired extends ExtendableError {
+export class NetworkAuthenticationRequired extends CustomError {
   constructor(
     message: string = "Network Authentication Required",
     errorCode: number = 511,

@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class ServiceUnavailable extends ExtendableError {
+export class ServiceUnavailable extends CustomError {
   constructor(
     message: string = "Service Unavailable",
     errorCode: number = 503,

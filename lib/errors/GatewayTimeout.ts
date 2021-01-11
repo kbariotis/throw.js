@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class GatewayTimeout extends ExtendableError {
+export class GatewayTimeout extends CustomError {
   constructor(
     message: string = "Gateway Timeout",
     errorCode: number = 504,

@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class PaymentRequired extends ExtendableError {
+export class PaymentRequired extends CustomError {
   constructor(
     message: string = "Payment Required",
     errorCode: number = 402,

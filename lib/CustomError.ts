@@ -1,4 +1,4 @@
-export default class CustomError extends Error {
+export class CustomError extends Error {
   errorCode: number;
   statusCode: number;
   originalError?: Error;

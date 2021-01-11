@@ -1,5 +1,5 @@
 import * as assert from "assert";
-import BadGateway from "../lib/errors/BadGateway";
+import { BadGateway } from "../lib";
 
 function doSomethingMoreBad() {
   throw new BadGateway();

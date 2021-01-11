@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class Gone extends ExtendableError {
+export class Gone extends CustomError {
   constructor(
     message: string = "Gone",
     errorCode: number = 410,

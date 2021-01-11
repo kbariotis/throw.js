@@ -19,7 +19,7 @@ yarn add throw.js
 ```javascript
 const express = require("express");
 const app = express();
-const NotFound = require("throw.js/errors/NotFound");
+const { NotFound } = require("throw.js");
 const logger = require("winston");
 
 app.get("/", (req, res, next) => {
@@ -42,9 +42,9 @@ app.listen(3000);
 ## Custom Errors
 
 ```javascript
-const Error = require("throw.js/CustomError");
+const { CustomError } = require("throw.js");
 
-throw new Error(message, statusCode?, errorCode?, originalError?);
+throw new CustomError(message, statusCode?, errorCode?, originalError?);
 ```
 
 Parameters:
@@ -56,13 +56,13 @@ Parameters:
 ## Stacking Errors
 
 ```javascript
-const Error = require("throw.js/CustomError");
+const { CustomError } = require("throw.js");
 
 try {
     // throws an error
 } catch (e) {
     // Pass the error as a parameter to keep its original stack trace
-    throw new Error(message, statusCode, errorCode, e);
+    throw new CustomError(message, statusCode, errorCode, e);
 }
 ```
 

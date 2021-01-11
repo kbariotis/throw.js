@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class HttpVersionNotSupported extends ExtendableError {
+export class HttpVersionNotSupported extends CustomError {
   constructor(
     message: string = "HTTP Version Not Supported",
     errorCode: number = 505,

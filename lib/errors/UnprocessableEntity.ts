@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class UnprocessableEntity extends ExtendableError {
+export class UnprocessableEntity extends CustomError {
   constructor(
     message: string = "Unprocessable Entity",
     errorCode: number = 422,

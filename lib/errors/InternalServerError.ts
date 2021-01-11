@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class InternalServerError extends ExtendableError {
+export class InternalServerError extends CustomError {
   constructor(
     message: string = "Internal Server Error",
     errorCode: number = 500,

@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class Forbidden extends ExtendableError {
+export class Forbidden extends CustomError {
   constructor(
     message: string = "Forbiden",
     errorCode: number = 403,

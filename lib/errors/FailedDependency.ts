@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class FailedDependency extends ExtendableError {
+export class FailedDependency extends CustomError {
   constructor(
     message: string = "Failed Dependency",
     errorCode: number = 424,

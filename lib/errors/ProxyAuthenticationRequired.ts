@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class ProxyAuthenticationRequired extends ExtendableError {
+export class ProxyAuthenticationRequired extends CustomError {
   constructor(
     message: string = "Proxy Authentication Required",
     errorCode: number = 407,

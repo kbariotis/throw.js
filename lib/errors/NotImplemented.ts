@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class NotImplemented extends ExtendableError {
+export class NotImplemented extends CustomError {
   constructor(
     message: string = "Not Implemented",
     errorCode: number = 501,

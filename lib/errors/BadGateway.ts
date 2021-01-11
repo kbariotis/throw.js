@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class BadGateway extends ExtendableError {
+export class BadGateway extends CustomError {
   constructor(
     message: string = "Bad Gateway",
     errorCode: number = 502,

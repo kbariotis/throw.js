@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class MethodNotAllowed extends ExtendableError {
+export class MethodNotAllowed extends CustomError {
   constructor(
     message: string = "Method Not Allowed",
     errorCode: number = 405,

@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class NotFound extends ExtendableError {
+export class NotFound extends CustomError {
   constructor(
     message: string = "Not Found",
     errorCode: number = 404,

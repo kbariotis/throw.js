@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class Conflict extends ExtendableError {
+export class Conflict extends CustomError {
   constructor(
     message: string = "Conflict",
     errorCode: number = 409,

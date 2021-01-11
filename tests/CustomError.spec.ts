@@ -1,5 +1,5 @@
 import * as assert from "assert";
-import CustomError from "../lib/CustomError";
+import { CustomError } from "../lib";
 
 function doSomethingBad() {
   const originalError = new Error("Original error");

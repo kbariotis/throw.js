@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class RequestTimeout extends ExtendableError {
+export class RequestTimeout extends CustomError {
   constructor(
     message: string = "Request Timeout",
     errorCode: number = 408,

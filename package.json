@@ -1,7 +1,8 @@
 {
   "name": "throw.js",
-  "version": "4.1.0",
+  "version": "5.0.0",
   "description": "A full REST API error collection",
+  "main": "index.js",
   "scripts": {
     "build": "tsc",
     "test": "for file in ./tests/*.spec.ts; do ts-node $file; done"

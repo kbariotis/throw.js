@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class BadRequest extends ExtendableError {
+export class BadRequest extends CustomError {
   constructor(
     message: string = "Bad Request",
     errorCode: number = 400,

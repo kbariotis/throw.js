@@ -1,6 +1,6 @@
-import ExtendableError from "../CustomError";
+import { CustomError } from "../CustomError";
 
-export default class NotAcceptable extends ExtendableError {
+export class NotAcceptable extends CustomError {
   constructor(
     message: string = "Not Acceptable",
     errorCode: number = 406,
